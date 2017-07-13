@@ -16,17 +16,12 @@ function windowResized() {
 function draw() {
   // desktop
   if (mouseIsPressed && (mouseButton === LEFT) && touches.length === 0) {
-    push();
     image(img, mouseX-img.width/2, mouseY-img.height/2);
-    pop();
   }
   // mobile
-  // if (touches.length === 1) {
-  //   push();
-  //   translate(-img.width/2, -img/height/2);
-  //   image(img, touches[0].x, touches[0].y);
-  //   pop();
-  // } 
+   if (touches.length === 1) {
+     image(img, touches[0].x-img.width/2, touches[0].y-img.height/2);
+   } 
 }
 
 // this prevents dragging screen around
